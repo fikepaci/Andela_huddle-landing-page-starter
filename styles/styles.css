@@ -1,33 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 1.5fr 3fr 1.5fr 1.5fr 1.5fr 1.5fr 0.6fr 0.5fr 0.5fr;
+  grid-template-rows: 0.2fr 0.5fr 0.9fr 0.3fr 0.3fr 0.3fr 0.5fr 0.3fr 0.3fr;
   grid-template-areas:
     "nav nav"
     "sidebar sidebar"
     "content1 content1"
     "content2 content3"
     "content4 content4"
+    "content5 content5"
     "content6 content6"
     "content7 content7"
-    "content10 content10"
-    "content11 footer";
+    "last last";
 }
+
+/* start of nav styles */
 nav {
   grid-area: nav;
   display: flex;
   align-items: center;
-  padding: 40px;
+  justify-content: space-between;
+  padding: 3.5rem;
+  margin-bottom: 4rem;
 }
 nav > img {
-  padding: 40px;
-  width: 200px;
+  width: 150px;
 }
-.button {
-  padding: 40px;
-  margin-left: auto;
-}
-.button > button {
+nav > button {
   padding: 0.6em 1.5em 0.6em 1.5em;
   border-radius: 2em;
   border: 1px solid hsl(322, 100%, 66%);
@@ -36,54 +40,74 @@ nav > img {
   cursor: pointer;
   font-weight: 300;
 }
-.button1 > button {
-  padding: 1.2em 4.2em 1.2em 4.2em;
+/* end of navigation styles */
+
+/* start of sidebar */
+#sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#sidebar > h1 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+#sidebar > p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  color: hsl(192, 100%, 9%);
+}
+#sidebar button {
+  padding: 1em 4.2em 1em 4.2em;
   border-radius: 4em;
-  font-size: 20px;
+  font-size: 16px;
   background: hsl(322, 100%, 66%);
   color: white;
   cursor: pointer;
   border: none;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
   box-shadow: 0px 15px 20px hsl(207, 100%, 98%);
 }
-#sidebar {
-  grid-area: sidebar;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.header1 {
-  padding: 20px;
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  color: hsl(192, 100%, 9%);
-}
-.p1 {
-  margin-bottom: 20px;
-  width: 480px;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: hsl(192, 100%, 9%);
-}
+
+/* end of #sidebar */
+
+/* start of content1 and content 2*/
+
 #content1 {
   grid-area: content1;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+#content1 > img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
+
 #content2 {
   grid-area: content2;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
-.content2-data {
-  margin-left: 13rem;
+.content2-data > img {
+  width: 30px;
 }
 .content2-data > h2 {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
 }
@@ -91,31 +115,45 @@ nav > img {
   color: hsl(190, 3%, 61%);
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
 }
+
 #content3 {
   grid-area: content3;
+  margin: 0 auto;
 }
+
+/* end of content2 and content 2*/
+
+/* start of content4 */
+
 #content4 {
   grid-area: content4;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
 #content4 > img {
   max-width: 100%;
+  display: block;
 }
-.content4 {
+.firstsection {
   display: flex;
   flex-direction: row;
-  background-color: rgba(246, 251, 255, 255);
-  padding: 5%;
+  justify-content: space-evenly;
+  background: rgba(246, 251, 255, 255);
+}
+.content4-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 23rem;
+}
+.content4-image > img {
+  width: 25rem;
+  max-width: 100%;
+  height: 0 auto;
 }
 .content4-data > h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 .content4-data > p {
   font-family: "Open Sans", sans-serif;
@@ -123,84 +161,78 @@ nav > img {
   color: hsl(192, 100%, 9%);
   padding-top: 4.8%;
 }
-.content4-data {
-  max-width: 45%;
-  padding-top: 10%;
-  padding-left: 4%;
+
+/* end of content4  */
+
+/* start of content5 */
+
+#content5 {
+  grid-area: content5;
+  margin: 8% 0 8% 0;
 }
-.content4-img {
+#content5 > img {
   max-width: 100%;
-  height: auto;
-  margin-left: auto;
-  padding-right: 4%;
+  display: block;
 }
-.content4-img > img {
-  width: 30rem;
+#content5 > .firstsection {
+  flex-direction: row-reverse;
+  background: none;
 }
+/* end of content5 */
+
+/* start of content6 */
 #content6 {
   grid-area: content6;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 6% 0 6% 0;
 }
 #content6 > img {
   max-width: 100%;
+  display: block;
 }
 
-.content6 {
-  display: flex;
-  flex-direction: row;
-  /* background-color: rgba(246, 251, 255, 255); */
-  padding: 5%;
-}
-.content6-data > h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-}
-.content6-data > p {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: hsl(192, 100%, 9%);
-  padding-top: 4.8%;
-}
-.content6-data {
-  max-width: 48%;
-  padding-top: 10%;
-  padding-left: 10%;
-}
-.content6-img {
-  max-width: 100%;
-  height: auto;
-  margin-left: auto;
-  padding-right: 4%;
-}
-.content6-img > img {
-  width: 30rem;
-}
-.content6-img > img {
-  width: 30rem;
-  padding-left: 10%;
-}
+/* end of content6 */
+
 #content7 {
   grid-area: content7;
-}
-#content7 > img {
-  max-width: 100%;
-}
-#content10 {
-  grid-area: content10;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#content7 > h2 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+#content7 > button {
+  padding: 1em 4.2em 1em 4.2em;
+  border-radius: 4em;
+  font-size: 16px;
+  background: hsl(322, 100%, 66%);
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  box-shadow: 0px 15px 20px hsl(207, 100%, 98%);
 }
 
 #content11 {
   grid-area: content11;
   background-color: blue;
 }
+.last {
+  grid-area: last;
+  display: flex;
+  flex-direction: column;
+}
 footer {
+  border-image: url("http://www.mycelticcrossstitch.com/celtic%20knot%20cross%20stitch.jpg")
+    30 30 round;
   grid-area: footer;
   background-color: red;
 }
@@ -232,10 +264,82 @@ footer {
     grid-template-areas:
       "nav"
       "sidebar"
-      "main"
       "content1"
       "content2"
       "content3"
+      "content4"
       "footer";
+  }
+  nav {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  #content1 > img {
+    position: absolute;
+    top: 35rem;
+    padding: 4%;
+  }
+  #content2 {
+    position: absolute;
+    top: 55rem;
+    left: 50%;
+    margin-left: -85px;
+  }
+  #content3 {
+    position: absolute;
+    top: 72rem;
+    left: 50%;
+    margin-left: -85px;
+  }
+  #content4 {
+    position: absolute;
+    top: 85rem;
+  }
+  .firstsection {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20% 0 20% 0;
+  }
+  .content4-data {
+    margin-top: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  #first-mobile-buttom {
+    content: url(../images/bg-section-bottom-mobile-1.svg);
+  }
+  #first-mobile-top {
+    content: url(../images/bg-section-top-mobile-1.svg);
+  }
+  .content4-image > img {
+    width: 21rem;
+  }
+  #content5 {
+    position: absolute;
+    top: 130rem;
+  }
+  #content5 > .firstsection {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 40% 0 40% 0;
+  }
+  #content6 {
+    position: absolute;
+    top: 170rem;
+  }
+  #content6 > .firstsection {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20% 0 20% 0;
+  }
+  #content6 > #first-mobile-buttom {
+    content: url(../images/bg-section-bottom-mobile-2.svg);
+  }
+  #content6 > #first-mobile-top {
+    content: url(../images/bg-section-top-mobile-2.svg);
+  }
+  #content7 {
+    position: absolute;
+    top: 226rem;
   }
 }
