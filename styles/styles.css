@@ -1,7 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  border: none;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 .container {
   display: grid;
@@ -39,6 +43,11 @@ nav > button {
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
   font-weight: 300;
+  background: white;
+}
+nav > button:hover {
+  color: hsl(321, 100%, 78%);
+  border: 1px solid hsl(321, 100%, 78%);
 }
 /* end of navigation styles */
 
@@ -78,6 +87,9 @@ nav > button {
   margin-top: 1rem;
   margin-bottom: 4rem;
   box-shadow: 0px 15px 20px hsl(207, 100%, 98%);
+}
+#sidebar > button:hover {
+  background-color: hsl(321, 100%, 78%);
 }
 
 /* end of #sidebar */
@@ -192,6 +204,8 @@ nav > button {
 
 /* end of content6 */
 
+/* start of content7 */
+
 #content7 {
   grid-area: content7;
   display: flex;
@@ -220,38 +234,121 @@ nav > button {
   margin-bottom: 4rem;
   box-shadow: 0px 15px 20px hsl(207, 100%, 98%);
 }
-
-#content11 {
-  grid-area: content11;
-  background-color: blue;
+#content7 > button:hover {
+  background-color: hsl(321, 100%, 78%);
 }
-.last {
+
+/* end of content7 */
+
+/* start of last section */
+
+#last {
   grid-area: last;
   display: flex;
   flex-direction: column;
 }
-footer {
-  border-image: url("http://www.mycelticcrossstitch.com/celtic%20knot%20cross%20stitch.jpg")
-    30 30 round;
-  grid-area: footer;
-  background-color: red;
+.last-image {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  clear: none;
+}
+.last-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5rem 8rem 5rem 8rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  background-color: hsl(192, 100%, 9%);
+}
+.left-footer {
+  background: hsl(192, 100%, 9%);
+  color: white;
+}
+.left-footer > img {
+  width: 170px;
+}
+.phone > img {
+  margin-right: 4%;
+}
+.phone {
+  padding: 2% 4% 4% 0;
+}
+.email {
+  padding: 2% 4% 14% 0;
+}
+.email > img {
+  margin-right: 3%;
+}
+.left-footer > p {
+  margin: 4% 0 4% 0;
+  max-width: 19rem;
+  font-size: 13px;
+  font-weight: 400;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+}
+.right-footer {
+  background: hsl(192, 100%, 9%);
+  color: white;
+}
+.right-footer > h2 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+.right-footer > p {
+  font-family: "Open Sans", sans-serif;
+  margin: 3% 0 4% 0;
+  font-weight: 400;
+  font-size: 13px;
+  max-width: 19rem;
+}
+form {
+  display: flex;
+  flex-direction: row;
+}
+input[type="text"] {
+  outline: none;
+  padding: 5% 32px;
+  text-decoration: none;
+  border: 1px solid hsl(223, 100%, 88%);
+  border-radius: 3px;
+  margin-right: 12px;
+}
+
+input[type="submit"] {
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 8% 20px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: hsl(322, 100%, 66%);
+}
+.error {
+  color: hsl(354, 100%, 66%);
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 10px 0 30px 0;
+}
+.box > input[type="submit"]:hover {
+  background-color: hsl(321, 100%, 78%);
 }
 .icons-center a {
-  font-size: 14px;
-  margin: 0 10px 0 0;
-  color: hsl(223, 87%, 63%);
-  text-decoration: none;
-  background: white;
-  padding: 10px;
-  box-sizing: border-box;
-  width: 35px;
-  text-align: center;
-  border: 1px solid hsl(0, 0%, 59%, 0.2);
-  border-radius: 50%;
-}
-.icons-center a:hover {
+  font-size: 30px;
+  margin-top: 7%;
   color: white;
-  background: hsl(223, 87%, 63%);
+  text-decoration: none;
+  box-sizing: border-box;
+  margin-right: 12px;
+  text-align: center;
+  /* border-radius: 50%; */
 }
 .img-any {
   background: url("../images/bg-footer-top-desktop.svg") no-repeat center fixed;
@@ -341,5 +438,30 @@ footer {
   #content7 {
     position: absolute;
     top: 226rem;
+  }
+  #last {
+    flex-direction: row;
+    position: absolute;
+    top: 240rem;
+    left: -27%;
+  }
+  form {
+    flex-direction: column;
+  }
+  input[type="text"] {
+    padding: 5% 62px;
+  }
+  input[type="submit"] {
+    padding: 5% 20px;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 30%;
+  }
+  #last > .last-section {
+    flex-direction: column-reverse;
+  }
+
+  #last-image {
+    content: url(../images/bg-footer-top-mobile.svg);
   }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./javascript/email-validator.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -134,15 +135,15 @@
           <h2>Ready To Build Your Community?</h2>
           <button type="submit">Get Started For Free</button>
       </div>
-      <!-- 
-       <div class="last">
-        <div class="group2">
-          <img src="./images/bg-section-top-desktop-1.svg" alt="" />
-        </div>
-        <div class="group1">
-          <div id="content11">
-            <div class="left-footer">
-              <img src="./images/logo.svg" alt="" />
+      <div id="last">
+        <img
+          src="./images/bg-footer-top-desktop.svg"
+          id="last-image""
+          alt=""
+        />
+        <div class="last-section">
+          <div class="left-footer">
+            <img src="./images/logo-footer.svg" alt="" />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 nulla quam, hendrerit lacinia vestibulum a, ultrices quis sem.
@@ -151,31 +152,41 @@
                 <img src="./images/icon-phone.svg" alt="" />
                 Phone: +1-543-123-4567
               </div>
-              <div class="emai">
+              <div class="email">
                 <img src="./images/icon-email.svg" alt="" />
                 example@huddle.com
               </div>
               <div class="icons-center">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>    
                 <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-twitter-square"></a>
               </div>
-            </div>
           </div>
-          <footer>
+          <div class="right-footer">
             <h2>Newsletter</h2>
             <p>
               To recieve tips on how to grow your community, sign up to our
               weekly newsletter. We’ll never send you spam or pass on your email
               address
             </p>
-            <div class="footer-form">
-              <input type="email" name="email" />
-              <button type="submit">Subscribe</button>
+            <div class="form-data">
+              <form name="Form" onsubmit="return validateForm()">
+                <div class="box">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    "
+                  />
+                  <div class="error" id="emailErr"></div>
+                </div>
+                <div class="box">
+                  <input type="submit" value="Subscribe" />
+                </div>
+              </form>
             </div>
-          </footer>
+          </div>
         </div>
-      </div> 
-    </div> -->
+      </div>
   </body>
 </html>
